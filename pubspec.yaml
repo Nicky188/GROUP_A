@@ -1,0 +1,34 @@
+name: student_assistant_app
+description: Student Assistant Application System - TPG316C Group Assignment
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management - MVVM + Provider (Unit 2)
+  provider: ^6.1.2
+
+  # Routing and Navigation (Unit 3)
+  go_router: ^13.2.0
+
+  # Supabase backend - Auth + CRUD (Units 4 & 5)
+  supabase_flutter: ^2.5.6
+
+  # File picker for document upload
+  file_picker: ^8.0.3
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
