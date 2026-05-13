@@ -14,8 +14,9 @@ import 'package:flutter/material.dart';
 class AppConstants {
   // ─── Supabase Configuration ───────────────────────────────────
   // Replace these with your actual Supabase project URL and anon key
-  static const String supabaseUrl = 'YOUR_SUPABASE_URL';
-  static const String supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+  static const String supabaseUrl = 'https://odjqviozlukdqdloyvkp.supabase.co';
+  static const String supabaseAnonKey =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9kanF2aW96bHVrZHFkbG95dmtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0OTcwMDIsImV4cCI6MjA5NDA3MzAwMn0.0BcV-B0ejCEblmClFJ_IZykueHMKes4siPof5U1IQ3o';
 
   // ─── Module options per academic level ────────────────────────
   static const Map<String, List<String>> modulesByLevel = {
@@ -124,7 +125,8 @@ class AppTheme {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Colors.red),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
     );
   }

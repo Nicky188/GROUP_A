@@ -87,7 +87,8 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
     if (!_formKey.currentState!.validate()) return;
 
     if (!_eligibilityConfirmed) {
-      _showSnackBar('You must confirm your eligibility to submit.', isError: true);
+      _showSnackBar('You must confirm your eligibility to submit.',
+          isError: true);
       return;
     }
 
@@ -182,14 +183,16 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Section 1: Student Info
-                      _sectionHeader('Student Information', Icons.person_outline),
+                      _sectionHeader(
+                          'Student Information', Icons.person_outline),
                       const SizedBox(height: 12),
                       _buildYearOfStudyDropdown(),
 
                       const SizedBox(height: 24),
 
                       // Section 2: Module 1 (required)
-                      _sectionHeader('Primary Module Application', Icons.book_outlined),
+                      _sectionHeader(
+                          'Primary Module Application', Icons.book_outlined),
                       const SizedBox(height: 12),
                       _buildModule1LevelDropdown(),
                       const SizedBox(height: 16),
@@ -198,7 +201,8 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
                       const SizedBox(height: 24),
 
                       // Section 3: Module 2 (optional)
-                      _sectionHeader('Second Module (Optional)', Icons.add_box_outlined),
+                      _sectionHeader(
+                          'Second Module (Optional)', Icons.add_box_outlined),
                       const SizedBox(height: 8),
                       _buildSecondModuleToggle(),
                       if (_hasSecondModule) ...[
@@ -211,14 +215,16 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
                       const SizedBox(height: 24),
 
                       // Section 4: Supporting Document
-                      _sectionHeader('Supporting Documentation', Icons.attach_file_outlined),
+                      _sectionHeader('Supporting Documentation',
+                          Icons.attach_file_outlined),
                       const SizedBox(height: 12),
                       _buildDocumentUploader(),
 
                       const SizedBox(height: 24),
 
                       // Section 5: Eligibility Confirmation
-                      _sectionHeader('Eligibility Confirmation', Icons.verified_outlined),
+                      _sectionHeader(
+                          'Eligibility Confirmation', Icons.verified_outlined),
                       const SizedBox(height: 12),
                       _buildEligibilityCheckbox(),
 
@@ -236,7 +242,9 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
                                   strokeWidth: 2.5,
                                 ),
                               )
-                            : Text(_isEditMode ? 'Update Application' : 'Submit Application'),
+                            : Text(_isEditMode
+                                ? 'Update Application'
+                                : 'Submit Application'),
                       ),
 
                       const SizedBox(height: 40),
@@ -291,7 +299,8 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
         );
       }).toList(),
       onChanged: (val) => setState(() => _yearOfStudy = val),
-      validator: (val) => val == null ? 'Please select your year of study' : null,
+      validator: (val) =>
+          val == null ? 'Please select your year of study' : null,
     );
   }
 
@@ -313,7 +322,8 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
           _module1Code = null; // Reset module code when level changes
         });
       },
-      validator: (val) => val == null ? 'Please select an academic level' : null,
+      validator: (val) =>
+          val == null ? 'Please select an academic level' : null,
     );
   }
 
@@ -329,14 +339,14 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
         prefixIcon: Icon(Icons.menu_book_outlined),
       ),
       hint: Text(
-        _module1Level == null
-            ? 'Select a level first'
-            : 'Select a module',
+        _module1Level == null ? 'Select a level first' : 'Select a module',
       ),
       items: modules.map((code) {
         return DropdownMenuItem(value: code, child: Text(code));
       }).toList(),
-      onChanged: _module1Level == null ? null : (val) => setState(() => _module1Code = val),
+      onChanged: _module1Level == null
+          ? null
+          : (val) => setState(() => _module1Code = val),
       validator: (val) => val == null ? 'Please select a module' : null,
     );
   }
@@ -402,12 +412,16 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
         labelText: 'Module (Module 2) *',
         prefixIcon: Icon(Icons.menu_book_outlined),
       ),
-      hint: Text(_module2Level == null ? 'Select a level first' : 'Select a module'),
+      hint: Text(
+          _module2Level == null ? 'Select a level first' : 'Select a module'),
       items: modules
-          .where((m) => m != _module1Code) // Prevent selecting same module twice
+          .where(
+              (m) => m != _module1Code) // Prevent selecting same module twice
           .map((code) => DropdownMenuItem(value: code, child: Text(code)))
           .toList(),
-      onChanged: _module2Level == null ? null : (val) => setState(() => _module2Code = val),
+      onChanged: _module2Level == null
+          ? null
+          : (val) => setState(() => _module2Code = val),
       validator: _hasSecondModule
           ? (val) => val == null ? 'Please select a module' : null
           : null,
@@ -510,7 +524,8 @@ class _ApplicationFormScreenState extends State<ApplicationFormScreen> {
             ),
             value: _eligibilityConfirmed,
             activeColor: AppTheme.primaryColor,
-            onChanged: (val) => setState(() => _eligibilityConfirmed = val ?? false),
+            onChanged: (val) =>
+                setState(() => _eligibilityConfirmed = val ?? false),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 48),
