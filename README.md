@@ -15,7 +15,7 @@ A Flutter mobile application that allows students to apply for Student Assistant
 
 | Full Name     | Student Number | Contribution                   |
 |---------------|----------------|--------------------------------|
-| [Nthabiseng]  | 220031298      | [Login Screen]                 |
+| Nthabiseng    | 220031298      |   Login Screen                 |
 | [Name 2]      | XXXXXXXXX      | [e.g. Application Form]        |
 | [Name 3]      | XXXXXXXXX      | [e.g. Admin Dashboard]         |
 | [Name 4]      | XXXXXXXXX      | [e.g. Models + ViewModels]     |
